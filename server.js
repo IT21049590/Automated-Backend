@@ -36,7 +36,7 @@ const connection = mongoose.connection;
 try {
   connection.once("open", () => {
       console.log("MONGO_DB Connection successful......!!");
-      console.log("***************************************");
+      console.log("**************************************");
   });
 } catch (error) {
   console.error("Error connecting to MongoDB:", error);
