@@ -33,10 +33,15 @@ app.listen(PORT, () => {
 });
 
 const connection = mongoose.connection;
-connection.once("open", () => {
-  console.log("MONGO_DB Connection successfull......!!");
-  console.log("***************************************");
-});
+try {
+  connection.once("open", () => {
+      console.log("MONGO_DB Connection successful......!!");
+      console.log("***************************************");
+  });
+} catch (error) {
+  console.error("Error connecting to MongoDB:", error);
+}
+
 
 import blog from "./Routes/Blog-routes.js";
 app.use("/Blog", blog);
