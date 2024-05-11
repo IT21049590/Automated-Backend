@@ -31,9 +31,4 @@ jobs:
     - name: Push Docker image
       run: docker push $DOCKER_REPO
 
-    - name: Deploy to EC2
-      run: |
-        ssh -o StrictHostKeyChecking=no -i ${{ secrets.SSH_PRIVATE_KEY }} $EC2_USER@$EC2_HOST "docker pull $DOCKER_REPO"
-        ssh -o StrictHostKeyChecking=no -i ${{ secrets.SSH_PRIVATE_KEY }} $EC2_USER@$EC2_HOST "docker run -d -p 8060:8060 $DOCKER_REPO"
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+    
