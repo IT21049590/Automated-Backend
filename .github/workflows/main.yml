@@ -9,7 +9,7 @@ env:
   GITHUB_REPO: 'https://github.com/IT21049590/Automated-Backend'
   DOCKER_REPO: 'hiruna123/blog-service'
   EC2_USER: 'ubuntu'
-  EC2_HOST: '44.212.39.188'
+  EC2_HOST: '18.212.70.126'
 
 jobs:
   build:
